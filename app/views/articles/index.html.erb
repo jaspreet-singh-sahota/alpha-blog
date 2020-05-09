@@ -1,0 +1,16 @@
+<h1>index page</h1>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <% @articles.each do |article| %>
+    <tr>
+        <td><%= article.title %></td>
+        <td><%= truncate(article.description, length: 30)%></td>
+        <td><%= link_to 'Show', article_path(article[:id]) %></td>
+    </tr>
+  <% end %>
+</table>
