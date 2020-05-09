@@ -1,23 +1,5 @@
 <h1>Create a new article</h1>
 
-<% if @article.errors.any? %>
-    <h2> The following errors prevented artice from beign saved </h2>
-    <ul>
-        <% @article.errors.full_messages.each do |error| %>
-           <li><%= error %></li> 
-        <% end %>
-    </ul>
-<% end %>
-
-
-
-
-<%= form_with scope: :article, url: articles_path, local: true do |f| %>
-    <%= f.label :title %> <br>
-    <%= f.text_field :title %><br>
-    <%= f.label :description %> <br>
-    <%= f.text_area :description %> <br>
-    <%= f.submit%>
-<% end %>
+<%= render 'form' %>
 
 <%= link_to 'Back to articles listing', articles_path %>
