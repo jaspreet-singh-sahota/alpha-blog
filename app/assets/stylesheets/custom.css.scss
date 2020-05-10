@@ -1,0 +1,45 @@
+@import 'bootstrap/dist/css/bootstrap';
+
+.navbar {
+    background-color: #393939;
+}
+
+#logo {
+    font-size: 1.7em;
+    letter-spacing: -1px;
+    color: #FF5A09;
+}
+
+.jumbotron {
+    background-image: asset-url('blog5.jpeg');
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 70vh;
+}
+
+.sign-up {
+    background-color: #269ccc;
+}
+
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: #dcdcdc;
+}
+
+#sticky-footer {
+  flex-shrink: none;
+  background-color: #393939;
+  color: #FF5A09;
+}
+
+.form {
+  background-color: #FF5A09  ;
+}
+
