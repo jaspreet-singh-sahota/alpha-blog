@@ -9,4 +9,12 @@
 
 <h3 class="text-center mt-4">Articles</h3>
 
+<div class="digg_pagination  mb-5">
+    <%= will_paginate @articles, :container => false %>
+</div>
+
 <%= render 'articles/article_card' %>
+
+<div class="digg_pagination  mb-5">
+    <%= will_paginate @articles, :container => false %>
+</div>

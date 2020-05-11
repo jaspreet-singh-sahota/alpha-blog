@@ -1,6 +1,14 @@
 <h1 class="text-center mt-4">Listing All Blogs </h1>
 
+<div class="digg_pagination mt-4 mb-4">
+    <%= will_paginate @articles, :container => false %>
+</div>
+
 <%= render 'article_card' %>
+
+<div class="digg_pagination mt-4 mb-4">
+    <%= will_paginate @articles, :container => false %>
+</div>
 
 <button mt-4><%= link_to "Create new article", new_article_path %></button>
 
