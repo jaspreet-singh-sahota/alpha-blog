@@ -15,7 +15,6 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        byebug
         @article = Article.new(params_titile_and_description)
         @article.user = current_user
         if @article.save
