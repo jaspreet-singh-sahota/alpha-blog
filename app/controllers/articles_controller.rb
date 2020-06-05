@@ -15,6 +15,7 @@ class ArticlesController < ApplicationController
     end
 
     def create
+        byebug
         @article = Article.new(params_titile_and_description)
         @article.user = current_user
         if @article.save
@@ -50,15 +51,13 @@ class ArticlesController < ApplicationController
     end
 
     def params_titile_and_description
-        params.require(:article).permit(:title, :description)
+        params.require(:article).permit(:title, :description, category_ids: [])
     end
 
     def require_same_user
-        
-        if current_user != @article.user && !current_user.admin?
+        if current_user != Article.find(params[:id]).user && !current_user.admin?
             flash[:alert] = "You can only edit or delete your own article"
             redirect_to @article
         end
     end
-
 end

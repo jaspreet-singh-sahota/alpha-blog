@@ -22,6 +22,17 @@
               <a class="dropdown-item" href="#">Something else here</a>
             </div>
           </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+              Categories
+            </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+              <% if logged_in? && current_user.admin? %>
+                <%= link_to "Create new categories", new_category_path, class: "dropdown-item" %>
+              <% end %> 
+                <%= link_to "Categories listing", categories_path, class: "dropdown-item" %>
+            </div>
+          </li>
           <% if logged_in? %>
             <li class="nav-item dropdown">
               <a class="nav-link text-white dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -34,7 +45,7 @@
                       data: {confirm: "Are you sure, you want to delete your profile?"} %>
               </div>
             </li> 
-          <% end %>
+          <% end %>  
           <% if logged_in? %>
             <li class="nav-item">
               <%= link_to 'Logout', logout_path, class: "nav-link text-white", method: :delete %>
